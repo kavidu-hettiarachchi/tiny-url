@@ -1,0 +1,179 @@
+<mxfile host="app.diagrams.net" modified="2024-04-01T05:45:23.645Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:124.0) Gecko/20100101 Firefox/124.0" etag="71HA3M_QqM1C-jo8eDMj" version="24.2.1" type="device" pages="2">
+  <diagram id="C5RBs43oDa-KdzZeNtuy" name="URL Shortening Flow">
+    <mxGraphModel dx="1434" dy="874" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="xG00sCD5W6HJTM0niMuq-0" value="&lt;b&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;URL Shortening Flow&lt;/font&gt;&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="930" y="390" width="240" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="xG00sCD5W6HJTM0niMuq-1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="xG00sCD5W6HJTM0niMuq-2" target="xG00sCD5W6HJTM0niMuq-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xG00sCD5W6HJTM0niMuq-2" value="Validate the original URL in the database" style="whiteSpace=wrap;html=1;dashed=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="930" y="710" width="240" height="37.5" as="geometry" />
+        </mxCell>
+        <mxCell id="xG00sCD5W6HJTM0niMuq-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="xG00sCD5W6HJTM0niMuq-4" target="xG00sCD5W6HJTM0niMuq-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xG00sCD5W6HJTM0niMuq-4" value="Start" style="html=1;dashed=0;whiteSpace=wrap;shape=mxgraph.dfd.start" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="930" y="470" width="240" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="xG00sCD5W6HJTM0niMuq-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="xG00sCD5W6HJTM0niMuq-6" target="xG00sCD5W6HJTM0niMuq-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xG00sCD5W6HJTM0niMuq-6" value="Enter the original URL" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;dashed=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="930" y="590" width="240" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="xG00sCD5W6HJTM0niMuq-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="xG00sCD5W6HJTM0niMuq-11" target="xG00sCD5W6HJTM0niMuq-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xG00sCD5W6HJTM0niMuq-8" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;No&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="xG00sCD5W6HJTM0niMuq-7">
+          <mxGeometry x="0.0526" y="-5" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xG00sCD5W6HJTM0niMuq-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="xG00sCD5W6HJTM0niMuq-11">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="840" y="910" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xG00sCD5W6HJTM0niMuq-10" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;yes&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="xG00sCD5W6HJTM0niMuq-9">
+          <mxGeometry x="0.0265" y="3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xG00sCD5W6HJTM0niMuq-11" value="&lt;div&gt;Original URL&amp;nbsp;&lt;/div&gt;&lt;div&gt;already existing&lt;br&gt;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;dashed=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="970" y="830" width="160" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="xG00sCD5W6HJTM0niMuq-12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="xG00sCD5W6HJTM0niMuq-13" target="xG00sCD5W6HJTM0niMuq-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xG00sCD5W6HJTM0niMuq-13" value="Generate a unique short code" style="whiteSpace=wrap;html=1;dashed=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="1290" y="890" width="240" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="xG00sCD5W6HJTM0niMuq-14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="xG00sCD5W6HJTM0niMuq-15">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1410" y="1130" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xG00sCD5W6HJTM0niMuq-15" value="The unique short code map with the original URL" style="whiteSpace=wrap;html=1;dashed=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="1290" y="1010" width="240" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="xG00sCD5W6HJTM0niMuq-20" value="Display the shortened URL" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;dashed=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="600" y="1010" width="240" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="xG00sCD5W6HJTM0niMuq-28" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="xG00sCD5W6HJTM0niMuq-24" target="xG00sCD5W6HJTM0niMuq-26">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xG00sCD5W6HJTM0niMuq-24" value="Save the unique short code that mapped&amp;nbsp; with original URL to the database" style="whiteSpace=wrap;html=1;dashed=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="1290" y="1129" width="240" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="xG00sCD5W6HJTM0niMuq-25" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="xG00sCD5W6HJTM0niMuq-26" target="xG00sCD5W6HJTM0niMuq-27">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xG00sCD5W6HJTM0niMuq-26" value="Display the new shortened URL" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;dashed=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="1290" y="1250" width="240" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="xG00sCD5W6HJTM0niMuq-27" value="End" style="html=1;dashed=0;whiteSpace=wrap;shape=mxgraph.dfd.start" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="1290" y="1370" width="240" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="6tTU9LKLb0q4_PKO8U9E-0" value="End" style="html=1;dashed=0;whiteSpace=wrap;shape=mxgraph.dfd.start" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="610" y="1129" width="240" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="6tTU9LKLb0q4_PKO8U9E-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="729.5" y="1049" as="sourcePoint" />
+            <mxPoint x="729.5" y="1129" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6tTU9LKLb0q4_PKO8U9E-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="6tTU9LKLb0q4_PKO8U9E-4" target="xG00sCD5W6HJTM0niMuq-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="6tTU9LKLb0q4_PKO8U9E-4" value="Retrieve an existing shortened URL" style="whiteSpace=wrap;html=1;dashed=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="600" y="890" width="240" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="_uA8qrgQtN8dZjvlKHWp" name="Redirection Flow">
+    <mxGraphModel dx="2284" dy="874" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="T9NVWnIJOIVb0GsQXZze-2" value="&lt;font size=&quot;1&quot;&gt;&lt;b style=&quot;font-size: 17px;&quot;&gt;Redirection Flow&lt;/b&gt;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry y="360" width="240" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GJmKeiQBSftro67oHGgZ-2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="T9NVWnIJOIVb0GsQXZze-4" target="GJmKeiQBSftro67oHGgZ-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="T9NVWnIJOIVb0GsQXZze-4" value="Search the short code in the database" style="whiteSpace=wrap;html=1;dashed=0;" vertex="1" parent="1">
+          <mxGeometry y="680" width="240" height="37.5" as="geometry" />
+        </mxCell>
+        <mxCell id="T9NVWnIJOIVb0GsQXZze-11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="T9NVWnIJOIVb0GsQXZze-12" target="T9NVWnIJOIVb0GsQXZze-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="T9NVWnIJOIVb0GsQXZze-12" value="Start" style="html=1;dashed=0;whiteSpace=wrap;shape=mxgraph.dfd.start" vertex="1" parent="1">
+          <mxGeometry y="440" width="240" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KxoqGndEJOtjkEB0hRYr-11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="T9NVWnIJOIVb0GsQXZze-13" target="T9NVWnIJOIVb0GsQXZze-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="T9NVWnIJOIVb0GsQXZze-13" value="Enter the shortened URL" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;dashed=0;" vertex="1" parent="1">
+          <mxGeometry y="560" width="240" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KxoqGndEJOtjkEB0hRYr-2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="GJmKeiQBSftro67oHGgZ-1" target="KxoqGndEJOtjkEB0hRYr-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KxoqGndEJOtjkEB0hRYr-3" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Yes&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="KxoqGndEJOtjkEB0hRYr-2">
+          <mxGeometry x="0.0526" y="-5" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KxoqGndEJOtjkEB0hRYr-16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="GJmKeiQBSftro67oHGgZ-1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-90" y="880" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KxoqGndEJOtjkEB0hRYr-17" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;No&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="KxoqGndEJOtjkEB0hRYr-16">
+          <mxGeometry x="0.0265" y="3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GJmKeiQBSftro67oHGgZ-1" value="Short code in the database" style="rhombus;whiteSpace=wrap;html=1;dashed=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="800" width="160" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="KxoqGndEJOtjkEB0hRYr-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="KxoqGndEJOtjkEB0hRYr-1" target="KxoqGndEJOtjkEB0hRYr-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KxoqGndEJOtjkEB0hRYr-1" value="Retrieve the original URL" style="whiteSpace=wrap;html=1;dashed=0;" vertex="1" parent="1">
+          <mxGeometry x="360" y="860" width="240" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KxoqGndEJOtjkEB0hRYr-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="KxoqGndEJOtjkEB0hRYr-4" target="KxoqGndEJOtjkEB0hRYr-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KxoqGndEJOtjkEB0hRYr-4" value="Increase visit count for short URL" style="whiteSpace=wrap;html=1;dashed=0;" vertex="1" parent="1">
+          <mxGeometry x="360" y="980" width="240" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KxoqGndEJOtjkEB0hRYr-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="KxoqGndEJOtjkEB0hRYr-6" target="KxoqGndEJOtjkEB0hRYr-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KxoqGndEJOtjkEB0hRYr-6" value="Redirect to the original URL" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;dashed=0;" vertex="1" parent="1">
+          <mxGeometry x="360" y="1100" width="240" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KxoqGndEJOtjkEB0hRYr-8" value="End" style="html=1;dashed=0;whiteSpace=wrap;shape=mxgraph.dfd.start" vertex="1" parent="1">
+          <mxGeometry x="360" y="1220" width="240" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KxoqGndEJOtjkEB0hRYr-12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="KxoqGndEJOtjkEB0hRYr-13" target="KxoqGndEJOtjkEB0hRYr-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KxoqGndEJOtjkEB0hRYr-13" value="URL not found" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;dashed=0;" vertex="1" parent="1">
+          <mxGeometry x="-320" y="860" width="240" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KxoqGndEJOtjkEB0hRYr-14" value="End" style="html=1;dashed=0;whiteSpace=wrap;shape=mxgraph.dfd.start" vertex="1" parent="1">
+          <mxGeometry x="-320" y="980" width="240" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
