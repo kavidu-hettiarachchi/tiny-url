@@ -1,11 +1,18 @@
-import { IsString, IsNotEmpty, IsEnum } from 'class-validator';
+import { IsString, IsNotEmpty, IsEnum, IsUrl } from 'class-validator';
 import { RedirectType } from './url-mapping.enums';
 import { InputType, Field, ObjectType } from '@nestjs/graphql';
+
+// Only absolute http(s) URLs are accepted as redirect targets.
+export const LONG_URL_OPTIONS = {
+  require_protocol: true,
+  protocols: ['http', 'https'],
+};
 
 // DTO for creating a URL entry
 export class CreateUrlEntryDto {
   @IsString()
   @IsNotEmpty()
+  @IsUrl(LONG_URL_OPTIONS, { message: 'Not a valid URL' })
   longUrl: string;
 
   @IsEnum(RedirectType)
@@ -16,6 +23,7 @@ export class CreateUrlEntryDto {
 export class UpdateUrlEntryDto {
   @IsString()
   @IsNotEmpty()
+  @IsUrl(LONG_URL_OPTIONS, { message: 'Not a valid URL' })
   longUrl: string;
 
   @IsEnum(RedirectType)
@@ -35,6 +43,7 @@ export class CreateUrlInput {
   @Field(() => String)
   @IsString()
   @IsNotEmpty()
+  @IsUrl(LONG_URL_OPTIONS, { message: 'Not a valid URL' })
   longUrl: string;
 
   @Field(() => RedirectType)
@@ -48,6 +57,7 @@ export class UpdateUrlInput {
   @Field(() => String)
   @IsString()
   @IsNotEmpty()
+  @IsUrl(LONG_URL_OPTIONS, { message: 'Not a valid URL' })
   longUrl: string;
 
   @Field(() => RedirectType)

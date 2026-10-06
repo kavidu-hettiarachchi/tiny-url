@@ -21,10 +21,12 @@ model urlMapping {
   longUrl      String // The original URL to be shortened.
   shortCode    String       @unique // The unique code representing the shortened URL.
   visitCount   Int          @default(0) // Number of times the short URL has been visited.
-  lastVisited  DateTime?    @default(now()) // The last time the short URL was visited
+  lastVisited  DateTime? // The last time the short URL was visited (null until first visit)
   redirectType RedirectType @default(TEMPORARILY) // Type of redirect
   createdAt    DateTime     @default(now()) // Timestamp when the record was created.
   updatedAt    DateTime     @updatedAt // Timestamp when the record was last updated.
+
+  @@unique([longUrl, redirectType]) // One short code per destination and redirect type (also indexes dedupe lookups).
 }
 
 // Defines the types of redirects.

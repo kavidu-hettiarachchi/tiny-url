@@ -26,6 +26,8 @@ export class PrismaService
         'Failed to connect to the database on module init.',
         error,
       );
+      // Fail fast instead of serving requests without a database.
+      throw error;
     }
   }
 

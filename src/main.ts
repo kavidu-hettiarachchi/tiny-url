@@ -18,6 +18,9 @@ async function bootstrap() {
     // Set a global route prefix
     app.setGlobalPrefix('api');
 
+    // Close the database connection cleanly on SIGTERM/SIGINT
+    app.enableShutdownHooks();
+
     // Start listening defined port
     await app.listen(PORT, () => {
       console.log(`Server is running at ${BASE_URL}:${PORT}`);

@@ -1,7 +1,7 @@
 import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
 import { UrlMappingService } from './url-mapping.service';
 import { ApolloError, UserInputError } from 'apollo-server-express';
-import { NotFoundException } from '@nestjs/common';
+import { BadRequestException, NotFoundException } from '@nestjs/common';
 import {
   CreateUrlInput,
   UrlCreationResponse,
@@ -44,7 +44,10 @@ export class UrlMappingResolver {
     try {
       return await this.urlMappingService.createUrl(createUrlInput);
     } catch (error) {
-      throw new UserInputError('Failed to create URL due to invalid input');
+      if (error instanceof BadRequestException) {
+        throw new UserInputError('Failed to create URL due to invalid input');
+      }
+      throw new ApolloError('Failed to create URL', 'INTERNAL_SERVER_ERROR');
     }
   }
 
@@ -67,6 +70,9 @@ export class UrlMappingResolver {
     } catch (error) {
       if (error instanceof NotFoundException) {
         throw new ApolloError('URL not found for update', 'NOT_FOUND');
+      }
+      if (error instanceof BadRequestException) {
+        throw new UserInputError('Failed to update URL due to invalid input');
       }
       throw new ApolloError('Failed to update URL', 'INTERNAL_SERVER_ERROR');
     }
