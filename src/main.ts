@@ -2,6 +2,7 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { ValidationPipe } from '@nestjs/common';
 import * as dotenv from 'dotenv';
+import helmet from 'helmet';
 
 async function bootstrap() {
   // Configure dotenv to load environment variables from the .env file
@@ -13,6 +14,10 @@ async function bootstrap() {
 
   try {
     const app = await NestFactory.create(AppModule);
+
+    // Security headers; the CSP is relaxed outside production so the GraphQL playground keeps working.
+    app.use(helmet({ contentSecurityPolicy: process.env.NODE_ENV === 'production' }));
+    app.getHttpAdapter().getInstance().disable('x-powered-by');
     app.useGlobalPipes(new ValidationPipe({ whitelist: true }));
 
     // Set a global route prefix

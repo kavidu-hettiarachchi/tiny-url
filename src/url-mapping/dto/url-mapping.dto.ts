@@ -1,6 +1,9 @@
-import { IsString, IsNotEmpty, IsEnum, IsUrl } from 'class-validator';
+import { IsString, IsNotEmpty, IsEnum, IsUrl, MaxLength } from 'class-validator';
 import { RedirectType } from './url-mapping.enums';
 import { InputType, Field, ObjectType } from '@nestjs/graphql';
+
+// Upper bound for stored URLs; guards against oversized payloads.
+export const MAX_URL_LENGTH = 2048;
 
 // Only absolute http(s) URLs are accepted as redirect targets.
 export const LONG_URL_OPTIONS = {
@@ -13,6 +16,7 @@ export class CreateUrlEntryDto {
   @IsString()
   @IsNotEmpty()
   @IsUrl(LONG_URL_OPTIONS, { message: 'Not a valid URL' })
+  @MaxLength(MAX_URL_LENGTH)
   longUrl: string;
 
   @IsEnum(RedirectType)
@@ -24,6 +28,7 @@ export class UpdateUrlEntryDto {
   @IsString()
   @IsNotEmpty()
   @IsUrl(LONG_URL_OPTIONS, { message: 'Not a valid URL' })
+  @MaxLength(MAX_URL_LENGTH)
   longUrl: string;
 
   @IsEnum(RedirectType)
@@ -34,6 +39,7 @@ export class UpdateUrlEntryDto {
 export class GetUrlByShortCodeDto {
   @IsString()
   @IsNotEmpty()
+  @MaxLength(64)
   shortCode: string;
 }
 
@@ -44,6 +50,7 @@ export class CreateUrlInput {
   @IsString()
   @IsNotEmpty()
   @IsUrl(LONG_URL_OPTIONS, { message: 'Not a valid URL' })
+  @MaxLength(MAX_URL_LENGTH)
   longUrl: string;
 
   @Field(() => RedirectType)
@@ -58,6 +65,7 @@ export class UpdateUrlInput {
   @IsString()
   @IsNotEmpty()
   @IsUrl(LONG_URL_OPTIONS, { message: 'Not a valid URL' })
+  @MaxLength(MAX_URL_LENGTH)
   longUrl: string;
 
   @Field(() => RedirectType)

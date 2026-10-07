@@ -194,4 +194,11 @@ describe('UrlMappingService', () => {
     prismaService.urlMapping.delete.mockRejectedValue(prismaError('P2025'));
     await expect(service.deleteUrl('nope')).rejects.toThrow(NotFoundException);
   });
+
+  it('Reject URLs longer than the allowed maximum', async () => {
+    const longUrl = `https://example.com/${'a'.repeat(2100)}`;
+    await expect(
+      service.createUrl({ longUrl, redirectType: RedirectType.TEMPORARILY }),
+    ).rejects.toThrow(BadRequestException);
+  });
 });
