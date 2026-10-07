@@ -1,6 +1,6 @@
 import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
 import { UrlMappingService } from './url-mapping.service';
-import { ApolloError, UserInputError } from 'apollo-server-express';
+import { GraphQLError } from 'graphql';
 import { BadRequestException, NotFoundException } from '@nestjs/common';
 import {
   CreateUrlInput,
@@ -10,6 +10,10 @@ import {
   UrlUpdateResponse,
 } from './dto/url-mapping.dto';
 import { RedirectType } from './dto/url-mapping.enums';
+
+// Builds a GraphQL error carrying a machine readable code.
+const gqlError = (message: string, code: string) =>
+  new GraphQLError(message, { extensions: { code } });
 
 @Resolver()
 export class UrlMappingResolver {
@@ -21,7 +25,7 @@ export class UrlMappingResolver {
     try {
       return await this.urlMappingService.getAllUrls();
     } catch (error) {
-      throw new ApolloError('Failed to retrieve URLs', 'INTERNAL_SERVER_ERROR');
+      throw gqlError('Failed to retrieve URLs', 'INTERNAL_SERVER_ERROR');
     }
   }
 
@@ -32,9 +36,9 @@ export class UrlMappingResolver {
       return await this.urlMappingService.getDetail({ shortCode });
     } catch (error) {
       if (error instanceof NotFoundException) {
-        throw new ApolloError('URL not found', 'NOT_FOUND');
+        throw gqlError('URL not found', 'NOT_FOUND');
       }
-      throw new ApolloError('Error fetching URL details', 'INTERNAL_SERVER_ERROR');
+      throw gqlError('Error fetching URL details', 'INTERNAL_SERVER_ERROR');
     }
   }
 
@@ -45,9 +49,9 @@ export class UrlMappingResolver {
       return await this.urlMappingService.createUrl(createUrlInput);
     } catch (error) {
       if (error instanceof BadRequestException) {
-        throw new UserInputError('Failed to create URL due to invalid input');
+        throw gqlError('Failed to create URL due to invalid input', 'BAD_USER_INPUT');
       }
-      throw new ApolloError('Failed to create URL', 'INTERNAL_SERVER_ERROR');
+      throw gqlError('Failed to create URL', 'INTERNAL_SERVER_ERROR');
     }
   }
 
@@ -69,12 +73,12 @@ export class UrlMappingResolver {
       };
     } catch (error) {
       if (error instanceof NotFoundException) {
-        throw new ApolloError('URL not found for update', 'NOT_FOUND');
+        throw gqlError('URL not found for update', 'NOT_FOUND');
       }
       if (error instanceof BadRequestException) {
-        throw new UserInputError('Failed to update URL due to invalid input');
+        throw gqlError('Failed to update URL due to invalid input', 'BAD_USER_INPUT');
       }
-      throw new ApolloError('Failed to update URL', 'INTERNAL_SERVER_ERROR');
+      throw gqlError('Failed to update URL', 'INTERNAL_SERVER_ERROR');
     }
   }
 
@@ -86,9 +90,9 @@ export class UrlMappingResolver {
       return 'URL deleted successfully';
     } catch (error) {
       if (error instanceof NotFoundException) {
-        throw new ApolloError('URL not found for deletion', 'NOT_FOUND');
+        throw gqlError('URL not found for deletion', 'NOT_FOUND');
       }
-      throw new ApolloError('Failed to delete URL', 'INTERNAL_SERVER_ERROR');
+      throw gqlError('Failed to delete URL', 'INTERNAL_SERVER_ERROR');
     }
   }
 }

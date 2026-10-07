@@ -73,4 +73,23 @@ describe('Tiny URL (e2e)', () => {
   it('GET /getDetail unknown short code returns 404', () => {
     return request(app.getHttpServer()).get('/api/v1/tiny-url/getDetail/unknown').expect(404);
   });
+
+  it('GraphQL getUrlDetail for an unknown code returns a NOT_FOUND error', async () => {
+    const res = await request(app.getHttpServer())
+      .post('/graphql')
+      .send({ query: '{ getUrlDetail(shortCode: "unknown") { shortUrl } }' })
+      .expect(200);
+    expect(res.body.errors[0].extensions.code).toBe('NOT_FOUND');
+  });
+
+  it('GraphQL createShortUrl with an invalid URL is rejected as a bad request', async () => {
+    const res = await request(app.getHttpServer())
+      .post('/graphql')
+      .send({
+        query:
+          'mutation { createShortUrl(create: { longUrl: "nope", redirectType: TEMPORARILY }) { shortUrl } }',
+      })
+      .expect(200);
+    expect(res.body.errors[0].extensions.code).toBe('BAD_REQUEST');
+  });
 });
