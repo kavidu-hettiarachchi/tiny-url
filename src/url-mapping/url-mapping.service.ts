@@ -14,6 +14,7 @@ import {
   GetUrlByShortCodeDto,
   UpdateUrlEntryDto,
   LONG_URL_OPTIONS,
+  MAX_URL_LENGTH,
 } from './dto/url-mapping.dto';
 import { PrismaService } from '../../prisma/prisma.service';
 import { ConfigService } from '@nestjs/config';
@@ -81,7 +82,7 @@ export class UrlMappingService {
 
   // Creates a new URL entry and returns its shortened version.
   async createUrl(dto: CreateUrlEntryDto): Promise<UrlCreationResponse> {
-    if (!isURL(dto.longUrl, LONG_URL_OPTIONS)) {
+    if (dto.longUrl.length > MAX_URL_LENGTH || !isURL(dto.longUrl, LONG_URL_OPTIONS)) {
       throw new BadRequestException('Not Valid URL');
     }
 
@@ -200,7 +201,7 @@ export class UrlMappingService {
     shortCode: string,
     dto: UpdateUrlEntryDto,
   ): Promise<UrlUpdateResponse> {
-    if (!isURL(dto.longUrl, LONG_URL_OPTIONS)) {
+    if (dto.longUrl.length > MAX_URL_LENGTH || !isURL(dto.longUrl, LONG_URL_OPTIONS)) {
       throw new BadRequestException('Not a valid URL');
     }
 
